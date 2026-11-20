@@ -1,26 +1,32 @@
-/* zona del hero con su brillo suave arriba y las guarniciones laterales */
+/* Hero: zona con brillo superior, texto a la izquierda, foto enmarcada
+   a la derecha y bloque de CTA. En móvil todo se apila. */
+
 .herozone {
   position: relative;
 }
+/* brillo suave que baja desde el techo de la zona */
 .herozone::before {
   content: '';
   position: absolute;
   z-index: 0;
   inset: -40px 0 0;
-  background: radial-gradient(120% 90% at 50% 0%, #FBF6EA 0%, transparent 72%);
+  background: radial-gradient(120% 90% at 50% 0%, var(--luz) 0%, transparent 72%);
   pointer-events: none;
 }
 .herozone > *:not(.deco) { position: relative; z-index: 1; }
 
-.deco {
-  position: absolute;
-  z-index: 0;
-  height: auto;
-  pointer-events: none;
-  user-select: none;
+/* guarniciones dentro de la zona (posicionadas contra .herozone,
+   que a su vez queda dentro del padding de .page) */
+.deco-queso {
+  left: calc(-1 * clamp(28px, 7vw, 110px));
+  bottom: -24px;
+  width: clamp(56px, 8vw, 140px);
 }
-.da { left: calc(-1 * clamp(28px, 7vw, 110px)); bottom: -24px; top: auto; width: clamp(56px, 8vw, 140px); }
-.db { right: calc(-1 * clamp(28px, 7vw, 110px)); top: -10px; width: clamp(84px, 17vw, 260px); }
+.deco-copa {
+  right: calc(-1 * clamp(28px, 7vw, 110px));
+  top: -10px;
+  width: clamp(84px, 17vw, 260px);
+}
 
 .hero {
   display: grid;
@@ -30,14 +36,20 @@
   margin-top: 36px;
 }
 
-h1 {
+.txtblock { grid-column: 1; grid-row: 1; align-self: end; }
+.ctablock { grid-column: 1; grid-row: 2; align-self: start; }
+
+.hero h1 {
   font-weight: 700;
-  font-size: clamp(3rem, 6.4vw, 5.4rem);
+  font-size: var(--fs-h1);
   line-height: 0.95;
   margin: 0;
   letter-spacing: -0.015em;
   color: var(--ink);
 }
+
+/* el lema sage vive suelto tras el h1 */
+.hero .halo-script { display: inline-block; }
 
 .gancho {
   font-size: clamp(1.5rem, 2.6vw, 2rem);
@@ -48,14 +60,14 @@ h1 {
 }
 
 .sizes {
-  font-size: 1.3rem;
+  font-size: var(--fs-intro);
   line-height: 1.45;
   margin: 0 0 1.6rem;
   max-width: 30rem;
 }
 
 .urgency {
-  font-size: 1.15rem;
+  font-size: var(--fs-urgencia);
   font-weight: 700;
   color: var(--olive);
   margin: 0 0 12px;
@@ -65,13 +77,19 @@ h1 {
 }
 .urgency::before { content: ''; width: 34px; height: 1px; background: var(--olive); }
 
-.micro { margin: 1.1rem 0 0; font-size: 1.1rem; color: var(--muted); }
+.micro {
+  margin: 1.1rem 0 0;
+  font-size: var(--fs-nota);
+  color: var(--muted);
+}
 
+/* foto con doble marco: borde exterior fino + radio interno, y la ramita */
 .photo {
   position: relative;
   justify-self: center;
   width: 100%;
   max-width: 470px;
+  margin: 0;
   grid-column: 2;
   grid-row: 1 / 3;
 }
@@ -80,20 +98,20 @@ h1 {
   position: absolute;
   inset: -14px;
   border: 1px solid var(--wine);
-  border-radius: 34px;
+  border-radius: var(--radio-7);
   opacity: 0.5;
 }
 .photo img {
-  position: relative;
   display: block;
   width: 100%;
+  height: auto; /* los atributos width/height solo dan el aspect-ratio inicial */
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 50% 62%;
-  border-radius: 24px;
-  box-shadow: 0 18px 40px rgba(31, 27, 22, 0.18);
+  border-radius: var(--radio-5);
+  box-shadow: var(--sombra-foto);
 }
-.photo .sprig {
+.photo-sprig {
   position: absolute;
   width: 120px;
   right: -34px;
@@ -101,8 +119,10 @@ h1 {
   transform: rotate(-8deg);
 }
 
-.txtblock { grid-column: 1; grid-row: 1; align-self: end; }
-.ctablock { grid-column: 1; grid-row: 2; align-self: start; }
+/* móvil: el ramito sobresale menos para no generar scroll horizontal */
+@media (max-width: 860px) {
+  .photo-sprig { right: -12px; bottom: -26px; }
+}
 
 @media (max-width: 860px) {
   .hero {
@@ -115,6 +135,6 @@ h1 {
   .txtblock { order: 0; }
   .photo { order: 1; align-self: center; max-width: 420px; }
   .ctablock { order: 2; }
-  .da { width: 60px; top: auto; bottom: 0; opacity: 0.85; }
-  .db { width: 90px; }
+  .deco-queso { width: 60px; top: auto; bottom: 0; opacity: 0.85; }
+  .deco-copa { width: 90px; }
 }

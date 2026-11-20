@@ -1,20 +1,6 @@
 import Halo from './Halo.jsx'
-import './Pedir.css'
-
-const PASOS = [
-  {
-    titulo: 'Escríbenos',
-    detalle: 'Cuéntanos cuántos son, qué día y dónde entregamos.',
-  },
-  {
-    titulo: 'Te cotizamos',
-    detalle: 'Te proponemos la tabla para tu ocasión, con su precio.',
-  },
-  {
-    titulo: 'Aparta tu fecha',
-    detalle: 'Ya con la cotización, tu día queda reservado.',
-  },
-]
+import { pasos } from '../content.js'
+import '../styles/secciones.css'
 
 export default function Pedir() {
   return (
@@ -24,7 +10,7 @@ export default function Pedir() {
       </h2>
       <p className="lead">Sin formularios ni vueltas: todo por WhatsApp</p>
       <ol className="steps">
-        {PASOS.map((p, i) => (
+        {pasos.map((p, i) => (
           <li key={p.titulo} className="step">
             <span className="num" aria-hidden="true">{i + 1}</span>
             <h3>{p.titulo}</h3>

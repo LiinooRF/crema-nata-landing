@@ -1,0 +1,62 @@
+/* Botón de WhatsApp: base vino + variantes claro y flotante. */
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 100%;
+  max-width: 520px;
+  background: var(--wine);
+  color: var(--onwine);
+  text-decoration: none;
+  border-radius: var(--radio-3);
+  padding: var(--sp-4) var(--sp-6);
+  border: 1px solid var(--wine2);
+  /* anillo crema que separa el botón del fondo + sombra neutra suave */
+  box-shadow: var(--sombra-cta);
+  font-size: var(--fs-cta);
+  font-weight: 600;
+  transition: background-color var(--anim);
+}
+
+.cta:hover { background: var(--wine2); }
+
+.cta-sep {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(var(--onwine-rgb), 0.45);
+}
+
+.cta-txt { flex: 1; }
+
+/* variante claro: sobre la banda vino del cierre */
+.cta.claro {
+  background: var(--onwine);
+  color: var(--wine);
+  border-color: rgba(var(--wine-rgb), 0.4);
+  box-shadow: var(--sombra-cta-claro);
+}
+.cta.claro:hover { background: var(--blanco); }
+.cta.claro .cta-sep { background: rgba(var(--wine-rgb), 0.3); }
+
+/* variante flotante: barra fija abajo, solo móvil */
+.cta.flotante {
+  display: none;
+  position: fixed;
+  left: 14px;
+  right: 14px;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  z-index: 5;
+  width: auto;
+  max-width: none;
+  font-size: var(--fs-cta-movil);
+  padding: var(--sp-3) var(--sp-5);
+}
+
+@media (max-width: 860px) {
+  .cta.flotante { display: flex; }
+}
+
+@media (min-width: 861px) {
+  .cta.flotante { display: none; }
+}

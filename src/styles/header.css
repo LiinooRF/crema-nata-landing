@@ -1,8 +1,12 @@
+/* Cabecera: marca, filete con ramita y navegación por anclas
+   (la nav se esconde en móvil, donde sobra). */
+
 .top { text-align: center; }
 
 .brand {
+  margin: 0;
   font-weight: 600;
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-size: var(--fs-marca);
   letter-spacing: -0.01em;
   color: var(--ink);
   line-height: 1;
@@ -38,8 +42,6 @@
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
 }
-.nav a:hover { border-bottom-color: var(--wine); }
-.nav a:focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; border-radius: 4px; }
 
 @media (max-width: 860px) {
   .nav { display: none; }

@@ -1,18 +1,26 @@
 import { site } from '../config.js'
 import { decoD } from '../assets.js'
-import './Header.css'
+import '../styles/header.css'
+
+const SECCIONES = [
+  { href: '#tablas', etiqueta: 'Tablas' },
+  { href: '#pedir', etiqueta: 'Cómo pedir' },
+  { href: '#preguntas', etiqueta: 'Preguntas' },
+]
 
 export default function Header() {
   return (
     <header className="top">
-      <div className="brand">{site.nombre}</div>
-      <div className="rule">
-        <img src={decoD} alt="" aria-hidden="true" />
+      <p className="brand">{site.nombre}</p>
+      <div className="rule" aria-hidden="true">
+        <img src={decoD} alt="" />
       </div>
       <nav className="nav" aria-label="Secciones">
-        <a href="#tablas">Tablas</a>
-        <a href="#pedir">Cómo pedir</a>
-        <a href="#preguntas">Preguntas</a>
+        {SECCIONES.map((s) => (
+          <a key={s.href} href={s.href}>
+            {s.etiqueta}
+          </a>
+        ))}
       </nav>
     </header>
   )

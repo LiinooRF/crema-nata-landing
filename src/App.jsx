@@ -7,12 +7,14 @@ import Cierre from './components/Cierre.jsx'
 import Footer from './components/Footer.jsx'
 import WACta from './components/WACta.jsx'
 import { decoC } from './assets.js'
-import './App.css'
+import { waMessages } from './content.js'
+import './styles/layout.css'
 
 export default function App() {
   return (
     <>
-      <img className="deco-fija dc" src={decoC} alt="" aria-hidden="true" />
+      {/* Guarnición fija: tarro de miel, abajo a la derecha en desktop */}
+      <img className="deco-fija deco-miel" src={decoC} alt="" aria-hidden="true" />
       <div className="page">
         <Header />
         <Hero />
@@ -22,12 +24,10 @@ export default function App() {
         <Cierre />
         <Footer />
       </div>
-      {/* CTA flotante solo móvil */}
-      <div className="solo-movil">
-        <WACta variante="float" texto="¡Hola! Quiero cotizar una tabla para compartir">
-          Cotiza sin compromiso
-        </WACta>
-      </div>
+      {/* CTA flotante, solo móvil */}
+      <WACta variante="flotante" texto={waMessages.hero}>
+        Cotiza sin compromiso
+      </WACta>
     </>
   )
 }

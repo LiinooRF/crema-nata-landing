@@ -1,0 +1,93 @@
+/* ============================================================
+   Tokens de diseño — el único lugar con colores, tamaños y
+   espaciados literales. Los componentes consumen variables.
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  /* Paleta */
+  --bg: #F6E9D9;        /* crema de fondo */
+  --ink: #3E2019;       /* texto principal */
+  --wine: #7A1F2B;      /* vino */
+  --wine2: #651722;     /* vino oscuro (hover, borde banda) */
+  --olive: #4A5A2E;     /* oliva (6.3:1 sobre crema, AA) */
+  --rose: #F0D9CF;      /* halo rosa */
+  --sage: #DDE0C8;      /* halo sage */
+  --onwine: #FBF5EA;    /* texto/fondos sobre vino */
+  --muted: #6B4A40;     /* texto secundario (6.6:1 sobre crema) */
+  --muted-suave: #7D6154; /* variante AA del muted para el © del footer */
+  --blanco: #FFFFFF;    /* hover del CTA claro */
+  --luz: #FBF6EA;       /* brillo radial del hero */
+
+  /* Canales rgb para transparencias (mismos tonos, con alpha) */
+  --wine-rgb: 122, 31, 43;
+  --wine2-rgb: 101, 23, 34;
+  --onwine-rgb: 251, 245, 234;
+  --sombra-rgb: 31, 27, 22;        /* sombras neutras cálidas */
+  --sombra-oscura-rgb: 40, 8, 14;  /* sombra del CTA sobre banda vino */
+
+  /* Tipografía */
+  --font-texto: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-script: 'Dancing Script', 'Brush Script MT', cursive;
+
+  /* Escala tipográfica */
+  --fs-fin: 1.05rem;        /* © del footer */
+  --fs-nota: 1.1rem;        /* microcopys bajo los CTA */
+  --fs-urgencia: 1.15rem;   /* línea de urgencia del hero */
+  --fs-cuerpo: 1.2rem;      /* párrafos de tarjetas, pasos, footer */
+  --fs-respuesta: 1.25rem;  /* respuestas del FAQ */
+  --fs-intro: 1.3rem;       /* párrafo de tamaños del hero */
+  --fs-lead: 1.35rem;       /* lead de sección */
+  --fs-cta: 1.35rem;        /* etiqueta del CTA */
+  --fs-cta-movil: 1.25rem;  /* CTA flotante de móvil */
+  --fs-pregunta: 1.45rem;   /* preguntas del FAQ */
+  --fs-numero: 1.6rem;      /* números de los pasos */
+  --fs-marca-footer: 1.6rem;
+  --fs-tarjeta: 1.7rem;     /* título de tarjeta */
+  --fs-lema: clamp(1.7rem, 3.4vw, 2.4rem);  /* lemas script (REM: no depende del padre) */
+  --fs-h1: clamp(3rem, 6.4vw, 5.4rem);
+  --fs-h2: clamp(2.3rem, 4.6vw, 3.6rem);
+  --fs-h2-banda: clamp(2.2rem, 4.6vw, 3.4rem);
+  --fs-marca: clamp(1.9rem, 4vw, 2.6rem);
+
+  /* Radios */
+  --radio-1: 4px;   /* focus del nav */
+  --radio-2: 6px;   /* focus de enlaces y respuestas */
+  --radio-3: 16px;  /* botones CTA */
+  --radio-4: 20px;  /* tarjetas */
+  --radio-5: 24px;  /* foto del hero */
+  --radio-6: 32px;  /* banda de cierre */
+  --radio-7: 34px;  /* marco exterior de la foto */
+
+  /* Espaciado (múltiplos de 4) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-7: 28px;
+  --sp-8: 32px;
+  --sp-9: 36px;
+  --sp-12: 48px;
+  --sp-14: 56px;
+
+  /* Movimiento */
+  --anim: 160ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Sombras compuestas */
+  --sombra-foto: 0 18px 40px rgba(var(--sombra-rgb), 0.18);
+  --sombra-tarjeta:
+    0 1px 2px rgba(var(--sombra-rgb), 0.05),
+    0 8px 24px rgba(var(--sombra-rgb), 0.06);
+  --sombra-num:
+    0 0 0 4px var(--bg),
+    0 0 0 5px rgba(var(--sombra-rgb), 0.08);
+  --sombra-cta:
+    0 0 0 4px var(--bg),
+    0 0 0 5px rgba(var(--sombra-rgb), 0.08),
+    0 8px 24px rgba(var(--sombra-rgb), 0.10);
+  --sombra-cta-claro:
+    0 0 0 4px rgba(var(--wine2-rgb), 0.5),
+    0 8px 24px rgba(var(--sombra-oscura-rgb), 0.35);
+}

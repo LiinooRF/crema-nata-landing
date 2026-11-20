@@ -1,3 +1,6 @@
+/* Halos orgánicos (rosa / sage): la firma visual del sitio.
+   Se dibujan con ::before detrás del texto, sin afectar el flujo. */
+
 .halo {
   position: relative;
   display: inline-block;
@@ -20,11 +23,12 @@
 .halo-rosa::before { background: var(--rose); }
 .halo-sage::before { background: var(--sage); }
 
-/* sage se usa para el texto script en oliva */
-.halo-sage {
-  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+/* Variante script: lema en Dancing Script dentro de un halo
+   (la frase suelta del hero y los títulos de sección con halo). */
+.halo-script {
+  font-family: var(--font-script);
   font-weight: 600;
-  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-size: var(--fs-lema);
   line-height: 1.25;
   color: var(--olive);
   margin: 0.7em 0 0;
@@ -32,3 +36,7 @@
   border-radius: 42% 58% 50% 50% / 55% 45% 55% 45%;
   transform: rotate(-0.8deg);
 }
+
+/* Encabezados renderizados desde Halo (h1/h2 con halo integrado):
+   heredan los estilos de título del archivo de su sección. */
+h1.halo-script { margin: 0; }

@@ -1,17 +1,6 @@
-:root {
-  color-scheme: light;
-  --bg: #F6E9D9;
-  --ink: #3E2019;
-  --wine: #7A1F2B;
-  --wine2: #651722;
-  --olive: #4A5A2E;
-  --rose: #F0D9CF;
-  --sage: #DDE0C8;
-  --onwine: #FBF5EA;
-  --muted: #6B4A40;
-}
-
-* , *::before, *::after { box-sizing: border-box; }
+/* Base: normalización mínima y fondo del documento.
+   Los valores concretos viven en tokens.css. */
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   height: 100%;
@@ -23,8 +12,14 @@ body {
   min-height: 100%;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-family: var(--font-texto);
   font-weight: 500;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 3px;
+  border-radius: var(--radio-2);
 }

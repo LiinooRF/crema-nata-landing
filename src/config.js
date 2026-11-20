@@ -1,4 +1,5 @@
 // Configuración del sitio — lo único que hay que tocar para producción.
+// El contenido visible (tarjetas, FAQ, mensajes de los CTAs) vive en content.js.
 export const site = {
   nombre: 'Crema&NataGdl',
   ciudad: 'Guadalajara, Jalisco',

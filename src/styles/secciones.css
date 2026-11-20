@@ -1,0 +1,204 @@
+/* Estilos compartidos de las secciones centrales:
+   Tablas (tarjetas), Pedir (pasos) y Preguntas (FAQ).
+   Cada bloque lleva un comentario con su nombre. */
+
+/* ---------- esqueleto común de sección ---------- */
+.section { padding: clamp(3.2rem, 7vw, 5.5rem) 0 0; }
+
+.section > h2 {
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: 1.02;
+  margin: 0;
+  letter-spacing: -0.012em;
+}
+
+/* título de sección cuando el halo ES el título (Dancing Script) */
+h2.halo-script { letter-spacing: -0.012em; }
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+  margin: 12px 0 0;
+  max-width: 34rem;
+  color: var(--ink);
+}
+
+/* halo en línea dentro de un h2 ("cada ocasión", "rápidas") */
+.hl { color: var(--wine); }
+
+/* ---------- Tablas: tarjetas ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+}
+
+.card {
+  background: var(--onwine);
+  border: 1px solid rgba(var(--wine-rgb), 0.18);
+  border-radius: var(--radio-4);
+  padding: var(--sp-6) var(--sp-6) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.chip {
+  align-self: flex-start;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--olive);
+  letter-spacing: 0.01em;
+}
+
+.card h3 {
+  font-size: var(--fs-tarjeta);
+  font-weight: 700;
+  margin: var(--sp-1) 0 0;
+  color: var(--ink);
+}
+
+.card p {
+  font-size: var(--fs-cuerpo);
+  line-height: 1.4;
+  margin: 0;
+  color: var(--muted);
+  flex: 1;
+}
+
+.card-cta {
+  font-size: var(--fs-cuerpo);
+  font-weight: 700;
+  color: var(--wine);
+  text-decoration: none;
+  margin-top: var(--sp-3);
+  padding: var(--sp-1) 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  align-self: flex-start;
+}
+.card-cta::after { content: '→'; font-size: 1.1em; }
+.card-cta:hover { text-decoration: underline; }
+
+/* la tarjeta destacada (posadas) lleva la campaña del momento */
+.card-destacada {
+  background: var(--wine);
+  border-color: var(--wine2);
+}
+.card-destacada h3 { color: var(--onwine); }
+.card-destacada p { color: rgba(var(--onwine-rgb), 0.85); }
+.card-destacada .chip { color: rgba(var(--onwine-rgb), 0.75); }
+.card-destacada .card-cta { color: var(--onwine); }
+
+.cardsnote {
+  margin-top: var(--sp-5);
+  font-size: var(--fs-cuerpo);
+  color: var(--muted);
+}
+
+@media (max-width: 860px) {
+  .cards { grid-template-columns: 1fr; }
+  /* zona de pulgo cómoda para el enlace de tarjeta en móvil */
+  .card-cta { padding: 9px 0; }
+}
+
+/* ---------- Pedir: pasos numerados ---------- */
+.steps {
+  list-style: none;
+  counter-reset: paso;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-8);
+  margin: var(--sp-8) 0 0;
+  padding: 0;
+}
+
+.step { position: relative; }
+
+.num {
+  counter-increment: paso;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--wine);
+  color: var(--onwine);
+  font-size: var(--fs-numero);
+  font-weight: 700;
+  /* anillo crema + hairline neutro, sin sombra de color */
+  box-shadow: var(--sombra-num);
+}
+
+.step h3 {
+  font-size: var(--fs-numero);
+  font-weight: 700;
+  margin: var(--sp-4) 0 var(--sp-1);
+}
+
+.step p {
+  font-size: var(--fs-cuerpo);
+  line-height: 1.4;
+  margin: 0;
+  color: var(--muted);
+}
+
+.zonanote {
+  margin-top: var(--sp-8);
+  font-size: var(--fs-cuerpo);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.zonanote::before { content: ''; width: 34px; height: 1px; background: var(--olive); flex: none; }
+
+@media (max-width: 860px) {
+  .steps { grid-template-columns: 1fr; gap: var(--sp-6); }
+}
+
+/* ---------- Preguntas: FAQ con <details> ---------- */
+.faq {
+  margin-top: var(--sp-7);
+  border-top: 1px solid rgba(var(--wine-rgb), 0.28);
+}
+
+.faq details { border-bottom: 1px solid rgba(var(--wine-rgb), 0.28); }
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: 18px 4px;
+  font-size: var(--fs-pregunta);
+  font-weight: 600;
+  color: var(--ink);
+}
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: '+';
+  color: var(--wine);
+  font-size: 1.7rem;
+  font-weight: 700;
+  flex: none;
+  transition: transform var(--anim);
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+
+.faq .resp {
+  padding: 0 4px 20px;
+  font-size: var(--fs-respuesta);
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 44rem;
+  margin: 0;
+}

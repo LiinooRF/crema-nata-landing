@@ -1,4 +1,4 @@
-/** Íconos de línea, un solo stroke, heredan color via currentColor. */
+/** Íconos de línea, un solo stroke, heredan color via currentColor. Decorativos. */
 
 export function WhatsAppIcon({ size = 20 }) {
   return (

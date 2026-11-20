@@ -1,22 +1,22 @@
 import { site, wa } from '../config.js'
 import { decoD } from '../assets.js'
+import { waMessages } from '../content.js'
 import { InstagramIcon, WhatsAppIcon } from './Icons.jsx'
-import WACta from './WACta.jsx'
-import './Footer.css'
+import '../styles/footer.css'
 
 export default function Footer() {
   return (
     <footer>
-      <div className="frule">
-        <img src={decoD} alt="" aria-hidden="true" />
+      <div className="frule" aria-hidden="true">
+        <img src={decoD} alt="" />
       </div>
-      <div className="brand" style={{ fontSize: '1.6rem' }}>{site.nombre}</div>
+      <p className="brand-footer">{site.nombre}</p>
       <div className="flinks">
         <a href={`https://instagram.com/${site.instagram}`} target="_blank" rel="noopener">
           <InstagramIcon size={20} />
           Instagram
         </a>
-        <a href={wa('¡Hola! Quiero cotizar una tabla')} target="_blank" rel="noopener">
+        <a href={wa(waMessages.general)} target="_blank" rel="noopener">
           <WhatsAppIcon size={20} />
           WhatsApp
         </a>

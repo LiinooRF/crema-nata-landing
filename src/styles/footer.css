@@ -1,7 +1,9 @@
+/* Pie: filete con ramita, marca, enlaces sociales y ciudad. */
+
 footer {
-  margin-top: 48px;
+  margin-top: var(--sp-12);
   text-align: center;
-  font-size: 1.2rem;
+  font-size: var(--fs-cuerpo);
   color: var(--muted);
 }
 
@@ -22,12 +24,19 @@ footer {
 }
 .frule img { width: 64px; height: auto; display: block; opacity: 0.8; }
 
+.brand-footer {
+  margin: 0;
+  font-weight: 600;
+  font-size: var(--fs-marca-footer);
+  color: var(--ink);
+}
+
 .flinks {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-  margin-top: 12px;
+  gap: var(--sp-6);
+  margin-top: var(--sp-3);
   flex-wrap: wrap;
 }
 
@@ -37,9 +46,13 @@ footer a {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--sp-2);
+  padding: 10px 0;
 }
 footer a:hover { text-decoration: underline; }
-footer a:focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; border-radius: 6px; }
 
-footer .fin { margin-top: 12px; font-size: 1.05rem; opacity: 0.8; }
+.fin {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-fin);
+  opacity: 0.8;
+}
