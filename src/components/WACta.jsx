@@ -10,19 +10,25 @@
  *     'claro'     — botón crema, para posarse sobre la banda vino del cierre.
  *     'flotante'  — barra fija abajo, solo móvil (envuelta en .cta-flotante).
  *   Se pueden combinar con un array: variante={['claro']}.
+ * - visible (flotante): false lo desvanece sin quitarlo del flujo fijo;
+ *   lo usa App para mostrarlo solo cuando ya se pasó el hero.
  */
 import { wa } from '../config.js'
 import { WhatsAppIcon, Chevron } from './Icons.jsx'
 import '../styles/wacta.css'
 
-export default function WACta({ texto, children, variante = ['base'] }) {
+export default function WACta({ texto, children, variante = ['base'], visible = true }) {
   const variantes = Array.isArray(variante) ? variante : [variante]
+  const clases = ['cta', ...variantes]
+  if (!visible) clases.push('cta-oculto')
   return (
     <a
-      className={['cta', ...variantes].join(' ')}
+      className={clases.join(' ')}
       href={wa(texto)}
       target="_blank"
       rel="noopener"
+      aria-hidden={!visible || undefined}
+      tabIndex={!visible ? -1 : undefined}
     >
       <WhatsAppIcon size={24} />
       <span className="cta-sep" aria-hidden="true" />

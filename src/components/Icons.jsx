@@ -26,3 +26,13 @@ export function InstagramIcon({ size = 20 }) {
     </svg>
   )
 }
+
+/** Copo de tres ejes con ramitas, para el badge de temporada. */
+export function SnowflakeIcon({ size = 14 }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2.5v19M4 7.2l16 9.6M20 7.2L4 16.8" />
+      <path d="M9.6 4.9 12 7.3l2.4-2.4M9.6 19.1 12 16.7l2.4 2.4M3.8 10.3 3.4 7.4l2.9.3M20.2 13.7l.4 2.9-2.9-.3" />
+    </svg>
+  )
+}

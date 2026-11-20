@@ -51,6 +51,14 @@
   max-width: none;
   font-size: var(--fs-cta-movil);
   padding: var(--sp-3) var(--sp-5);
+  transition: opacity var(--anim-suave), transform var(--anim-suave);
+}
+
+/* oculto (aún dentro del hero): desvanecido y sin interacción */
+.cta.flotante.cta-oculto {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
 }
 
 @media (max-width: 860px) {

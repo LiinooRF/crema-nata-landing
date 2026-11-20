@@ -4,6 +4,7 @@ import '../styles/header.css'
 
 const SECCIONES = [
   { href: '#tablas', etiqueta: 'Tablas' },
+  { href: '#ocaciones', etiqueta: 'Ocasiones' },
   { href: '#pedir', etiqueta: 'Cómo pedir' },
   { href: '#preguntas', etiqueta: 'Preguntas' },
 ]

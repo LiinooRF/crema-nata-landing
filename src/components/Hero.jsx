@@ -1,5 +1,6 @@
 import WACta from './WACta.jsx'
 import Halo from './Halo.jsx'
+import { SnowflakeIcon } from './Icons.jsx'
 import { decoA, decoB, tabla } from '../assets.js'
 import { waMessages } from '../content.js'
 import '../styles/hero.css'
@@ -33,6 +34,10 @@ export default function Hero() {
 
       <main className="hero">
         <div className="txtblock">
+          <p className="temporada">
+            <SnowflakeIcon />
+            Temporada de posadas 2026
+          </p>
           <h1>
             El arte de <Halo>compartir</Halo>
           </h1>

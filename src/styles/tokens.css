@@ -14,6 +14,7 @@
   --rose: #F0D9CF;      /* halo rosa */
   --sage: #DDE0C8;      /* halo sage */
   --onwine: #FBF5EA;    /* texto/fondos sobre vino */
+  --card: #FBF5EA;      /* fondo de tarjetas claras (mismo crema que --onwine) */
   --muted: #6B4A40;     /* texto secundario (6.6:1 sobre crema) */
   --muted-suave: #7D6154; /* variante AA del muted para el © del footer */
   --blanco: #FFFFFF;    /* hover del CTA claro */
@@ -22,6 +23,7 @@
   /* Canales rgb para transparencias (mismos tonos, con alpha) */
   --wine-rgb: 122, 31, 43;
   --wine2-rgb: 101, 23, 34;
+  --olive-rgb: 74, 90, 46;       /* borde hairline del badge de temporada */
   --onwine-rgb: 251, 245, 234;
   --sombra-rgb: 31, 27, 22;        /* sombras neutras cálidas */
   --sombra-oscura-rgb: 40, 8, 14;  /* sombra del CTA sobre banda vino */
@@ -32,6 +34,11 @@
 
   /* Escala tipográfica */
   --fs-fin: 1.05rem;        /* © del footer */
+  --fs-chip: 0.8125rem;     /* 13px, chips de contenido de tarjetas */
+  --fs-badge: 0.875rem;     /* 14px, badge de temporada del hero */
+  --fs-ocasion-desc: 0.9375rem; /* 15px, descripción de ocasión */
+  --fs-ocasion: 1.0625rem;  /* 17px, título de ocasión */
+  --fs-firma: 1.25rem;      /* 20px, firma del footer */
   --fs-nota: 1.1rem;        /* microcopys bajo los CTA */
   --fs-urgencia: 1.15rem;   /* línea de urgencia del hero */
   --fs-cuerpo: 1.2rem;      /* párrafos de tarjetas, pasos, footer */
@@ -58,6 +65,7 @@
   --radio-5: 24px;  /* foto del hero */
   --radio-6: 32px;  /* banda de cierre */
   --radio-7: 34px;  /* marco exterior de la foto */
+  --radio-pill: 999px; /* badge de temporada (píldora) */
 
   /* Espaciado (múltiplos de 4) */
   --sp-1: 4px;
@@ -74,6 +82,7 @@
 
   /* Movimiento */
   --anim: 160ms cubic-bezier(0.22, 1, 0.36, 1);
+  --anim-suave: 200ms cubic-bezier(0.22, 1, 0.36, 1); /* CTA flotante y apertura FAQ */
 
   /* Sombras compuestas */
   --sombra-foto: 0 18px 40px rgba(var(--sombra-rgb), 0.18);

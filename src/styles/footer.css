@@ -51,6 +51,15 @@ footer a {
 }
 footer a:hover { text-decoration: underline; }
 
+/* firma en script, pegada al © */
+.firma {
+  margin: var(--sp-8) 0 var(--sp-2);
+  font-family: var(--font-script);
+  font-size: var(--fs-firma);
+  color: var(--olive);
+}
+.firma + .fin { margin-top: 0; }
+
 .fin {
   margin-top: var(--sp-3);
   font-size: var(--fs-fin);

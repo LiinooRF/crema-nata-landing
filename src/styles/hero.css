@@ -39,6 +39,20 @@
 .txtblock { grid-column: 1; grid-row: 1; align-self: end; }
 .ctablock { grid-column: 1; grid-row: 2; align-self: start; }
 
+/* badge de temporada sobre el h1: píldora discreta con copo */
+.temporada {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0 0 var(--sp-4);
+  font-size: var(--fs-badge);
+  font-weight: 600;
+  color: var(--olive);
+  border: 1px solid rgba(var(--olive-rgb), 0.3);
+  border-radius: var(--radio-pill);
+  padding: 6px 14px;
+}
+
 .hero h1 {
   font-weight: 700;
   font-size: var(--fs-h1);

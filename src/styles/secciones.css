@@ -44,6 +44,12 @@ h2.halo-script { letter-spacing: -0.012em; }
   flex-direction: column;
   gap: var(--sp-2);
   box-shadow: var(--sombra-tarjeta);
+  transition: transform var(--anim);
+}
+
+/* levantamiento sobrio, solo donde hay hover real */
+@media (hover: hover) {
+  .card:hover { transform: translateY(-2px); }
 }
 
 .chip {
@@ -69,6 +75,25 @@ h2.halo-script { letter-spacing: -0.012em; }
   flex: 1;
 }
 
+/* chips de contenido: qué lleva la tabla, entre el párrafo y el enlace */
+.incluye {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  list-style: none;
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+}
+
+.incluye li {
+  font-size: var(--fs-chip);
+  line-height: 1.5;
+  color: var(--muted);
+  border: 1px solid rgba(var(--sombra-rgb), 0.15);
+  border-radius: var(--radio-2);
+  padding: 3px 10px;
+}
+
 .card-cta {
   font-size: var(--fs-cuerpo);
   font-weight: 700;
@@ -81,8 +106,9 @@ h2.halo-script { letter-spacing: -0.012em; }
   gap: var(--sp-2);
   align-self: flex-start;
 }
-.card-cta::after { content: '→'; font-size: 1.1em; }
+.card-cta::after { content: '→'; font-size: 1.1em; transition: transform var(--anim); }
 .card-cta:hover { text-decoration: underline; }
+.card-cta:hover::after { transform: translateX(2px); }
 
 /* la tarjeta destacada (posadas) lleva la campaña del momento */
 .card-destacada {
@@ -92,6 +118,10 @@ h2.halo-script { letter-spacing: -0.012em; }
 .card-destacada h3 { color: var(--onwine); }
 .card-destacada p { color: rgba(var(--onwine-rgb), 0.85); }
 .card-destacada .chip { color: rgba(var(--onwine-rgb), 0.75); }
+.card-destacada .incluye li {
+  border-color: rgba(var(--onwine-rgb), 0.35);
+  color: rgba(var(--onwine-rgb), 0.85);
+}
 .card-destacada .card-cta { color: var(--onwine); }
 
 .cardsnote {
@@ -202,3 +232,10 @@ h2.halo-script { letter-spacing: -0.012em; }
   max-width: 44rem;
   margin: 0;
 }
+
+/* entrada de la respuesta al abrir (una sola pasada, sin tocar el alto) */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.faq details[open] .resp { animation: fadeSlide var(--anim-suave); }

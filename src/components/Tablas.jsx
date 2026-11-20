@@ -15,6 +15,11 @@ export default function Tablas() {
             <span className="chip">{t.chip}</span>
             <h3>{t.nombre}</h3>
             <p>{t.detalle}</p>
+            <ul className="incluye" aria-label={`Incluye ${t.nombre.toLowerCase()}`}>
+              {t.incluye.map((i) => (
+                <li key={i}>{i}</li>
+              ))}
+            </ul>
             <a
               className="card-cta"
               href={wa(t.mensaje)}

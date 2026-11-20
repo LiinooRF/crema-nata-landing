@@ -1,0 +1,47 @@
+/* Galería "Para cada ocasión": tarjetas crema con una composición
+   dibujada a mano cada una, título y línea de descripción. */
+
+.ocasiones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+}
+
+.ocasion {
+  background: var(--card);
+  border: 1px solid rgba(var(--wine-rgb), 0.18);
+  border-radius: var(--radio-4);
+  padding: var(--sp-6);
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform var(--anim);
+}
+
+/* levantamiento sobrio, solo donde hay hover real */
+@media (hover: hover) {
+  .ocasion:hover { transform: translateY(-2px); }
+}
+
+.dibujo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ocasion h3 {
+  font-size: var(--fs-ocasion);
+  font-weight: 600;
+  margin: var(--sp-3) 0 0;
+  color: var(--ink);
+}
+
+.ocasion p {
+  font-size: var(--fs-ocasion-desc);
+  line-height: 1.45;
+  margin: var(--sp-1) 0 0;
+  color: var(--muted);
+}
+
+@media (max-width: 860px) {
+  .ocasiones { grid-template-columns: 1fr; }
+}

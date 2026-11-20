@@ -22,6 +22,7 @@ export default function Footer() {
         </a>
         <span>{site.ciudad}</span>
       </div>
+      <p className="firma">hecha con cariño en Gdl</p>
       <p className="fin">© 2026 {site.nombre}</p>
     </footer>
   )

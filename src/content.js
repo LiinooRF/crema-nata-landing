@@ -26,6 +26,7 @@ export const tablas = [
     chip: 'Para 2',
     nombre: 'La cena de dos',
     detalle: 'Una noche tranquila y rica, sin cocinar y sin trastes que lavar.',
+    incluye: ['quesos', 'carnes', 'pan'],
     mensaje: waMessages.dos,
     cta: 'Cotiza esta tabla',
   },
@@ -33,6 +34,7 @@ export const tablas = [
     chip: '6–8',
     nombre: 'La reunión',
     detalle: 'El pendiente que se armó en la tarde: tabla con de todo un poco.',
+    incluye: ['quesos', 'carnes', 'frutas', 'dulces'],
     mensaje: waMessages.media,
     cta: 'Cotiza esta tabla',
   },
@@ -40,6 +42,7 @@ export const tablas = [
     chip: '12+',
     nombre: 'La fiesta',
     detalle: 'Cuando la casa se llena: tabla grande y variedad para todos.',
+    incluye: ['de todo un poco', 'tabla grande', 'variedad'],
     mensaje: waMessages.grande,
     cta: 'Cotiza esta tabla',
   },
@@ -47,9 +50,27 @@ export const tablas = [
     chip: 'Posadas',
     nombre: 'La posada',
     detalle: 'Tu fecha apartada y una tabla del tamaño de tu lista de invitados.',
+    incluye: ['tu fecha apartada', 'tamaño a tu medida', 'entrega en tu posada'],
     mensaje: waMessages.posada,
     cta: 'Aparta tu fecha',
     destacada: true,
+  },
+]
+
+/** Composiciones de la galería "Para cada ocasión". El dibujo de cada una
+ *  vive en Occasions.jsx; aquí solo el texto. */
+export const ocasiones = [
+  {
+    titulo: 'La mesa de dos',
+    desc: 'Poca vajilla, buena conversación.',
+  },
+  {
+    titulo: 'La reunión',
+    desc: 'Se pone en medio y nadie se levanta.',
+  },
+  {
+    titulo: 'La posada',
+    desc: 'Luces arriba y la mesa llena hasta tarde.',
   },
 ]
 
